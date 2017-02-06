@@ -7,6 +7,7 @@
 namespace Tadpole\Foundation;
 
 use swoole_websocket_server;
+use Tadpole\Stat;
 
 class SocketServer
 {
@@ -49,7 +50,7 @@ class SocketServer
 
             //update location
             case 'update':
-                var_dump($message);
+                $stat = new Stat();
                 $status = [
                         'type' => 'update',
                         'id' => $client,
@@ -58,6 +59,7 @@ class SocketServer
                         'x' => $message["x"] + 0,
                         'y' => $message["y"] + 0,
                         'life' => 1,
+                        'size' => $stat->getGender($client) == 1 ? 20 : 4,
                         'name' => isset($message['name']) ? $message['name'] : 'Guest.' . $client,
                         'authorized' => false,
                 ];
@@ -82,6 +84,10 @@ class SocketServer
 
         //将当前连接加入连接池
         $this->gateWay->join($client);
+
+        //设置性别
+        $stat = new Stat();
+        $stat->setGender($client);
 
         //响应客户端的连接
         $welcome = [

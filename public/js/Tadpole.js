@@ -118,13 +118,13 @@ var Tadpole = function() {
 			// context.shadowColor   = 'rgba(249, 136, 119, '+opacity*0.7+')';
 		}
 		else {
-			var gender = $.cookie('todpole_gender');
-
-			if (gender == 1) {
-				context.fillStyle = 'rgba(226,219,226,'+opacity+')';
-			} else {
-				context.fillStyle = 'rgba(244,167,185,'+opacity+')';
-			}
+			// var gender = $.cookie('todpole_gender');
+            //
+			// if (gender == 1) {
+			// 	context.fillStyle = 'rgba(226,219,226,'+opacity+')';
+			// } else {
+			context.fillStyle = 'rgba(226,219,226,'+opacity+')';
+			// }
 		}
 		
 		context.shadowOffsetX = 0;
@@ -158,7 +158,7 @@ var Tadpole = function() {
 		context.font = 7 + "px 'proxima-nova-1','proxima-nova-2', arial, sans-serif";
 		context.textBaseline = 'hanging';
 		var width = context.measureText(tadpole.name).width;
-		context.fillText(tadpole.name, tadpole.x - width/2, tadpole.y + 8);
+		context.fillText(tadpole.name, tadpole.x - width/2, tadpole.y + 18);
 	}
 	
 	var drawMessages = function(context) {

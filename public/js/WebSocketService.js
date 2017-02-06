@@ -29,7 +29,10 @@ var WebSocketService = function(model, webSocket) {
 		}
 		
 		var tadpole = model.tadpoles[data.id];
-		
+		console.log(tadpole);
+
+		tadpole.size = data.size;
+
 		if(tadpole.id == model.userTadpole.id) {			
 			tadpole.name = data.name;
 			return;
