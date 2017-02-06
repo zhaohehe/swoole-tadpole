@@ -49,6 +49,7 @@ class SocketServer
 
             //update location
             case 'update':
+                var_dump($message);
                 $status = [
                         'type' => 'update',
                         'id' => $client,

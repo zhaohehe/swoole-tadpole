@@ -3,7 +3,7 @@
  * Sometime too hot the eye of heaven shines
  */
 
-$app = require '../tadpole/Foundation/bootstrap.php';
+$app = require '../tadpole/bootstrap.php';
 
 $tadpoleController = 'Tadpole\Controllers\tadpoleController';
 

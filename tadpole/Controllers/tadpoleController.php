@@ -19,6 +19,11 @@ class tadpoleController
 
     public function home($request, $response, $args)
     {
+        if (is_null($_COOKIE['todpole_gender'])) {
+            $gender = rand(0, 1);
+            setcookie('todpole_gender', $gender);
+        }
+
         return $this->container->view->render($response, 'index.twig');
     }
 }

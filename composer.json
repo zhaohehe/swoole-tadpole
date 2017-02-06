@@ -20,7 +20,7 @@
             "Tadpole\\": "tadpole/"
         },
         "files": [
-            "tadpole/Foundation/helper.php"
+            "tadpole/helper.php"
         ]
     },
     "repositories": {

@@ -118,7 +118,13 @@ var Tadpole = function() {
 			// context.shadowColor   = 'rgba(249, 136, 119, '+opacity*0.7+')';
 		}
 		else {
-			context.fillStyle = 'rgba(226,219,226,'+opacity+')';
+			var gender = $.cookie('todpole_gender');
+
+			if (gender == 1) {
+				context.fillStyle = 'rgba(226,219,226,'+opacity+')';
+			} else {
+				context.fillStyle = 'rgba(244,167,185,'+opacity+')';
+			}
 		}
 		
 		context.shadowOffsetX = 0;

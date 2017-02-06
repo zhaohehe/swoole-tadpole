@@ -38,7 +38,7 @@ if (! function_exists('config')) {
      */
     function config($key)
     {
-        $config_file = require __DIR__.'/../../config.php';
+        $config_file = require __DIR__ . '/../config.php';
 
         $config_key = explode('.', $key);
         $config_key_first = $config_file[array_shift($config_key)];
